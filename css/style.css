@@ -1,0 +1,42 @@
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.status-em-revisão {
+    background-color: #facc15;
+    color: #000;
+}
+
+.status-a-fazer {
+    background-color: #e5e7eb;
+    color: #000;
+}
+
+.status-em-produção {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+.status-finalizada {
+    background-color: #22c55e;
+    color: #fff;
+}
+
+.status-entregue {
+    background-color: #7c3aed;
+    color: #fff;
+}
+
+.badge {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.badge:hover {
+    opacity: 0.8;
+}
