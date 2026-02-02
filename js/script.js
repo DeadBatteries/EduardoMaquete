@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", renderizarTabela);
 
 const STATUS = [
 
@@ -14,80 +15,103 @@ const STATUS = [
 
 const tabelamaquetes = document.getElementById("tabelaMaquetes");
 
-projetos.forEach(projeto => {
-    
-    let row = document.createElement("tr");
+renderizarTabela;
 
-    let tdId = document.createElement("td");
-    tdId.textContent = projeto.id;
+function renderizarTabela() {
 
-    row.appendChild(tdId);
+    tabelamaquetes.textContent = "";
 
-    let tdName = document.createElement("td");
-    tdName.textContent = projeto.empreendimento
+    projetos.forEach(projeto => {
+        
 
-    row.appendChild(tdName);
+        //Render
 
-    let tdConstrutora = document.createElement("td");
-    tdConstrutora.textContent = projeto.construtora;
 
-    row.appendChild(tdConstrutora);
+        let row = document.createElement("tr");
 
-    let tdScale = document.createElement("td");
+        let tdId = document.createElement("td");
+        tdId.textContent = projeto.id;
 
-    tdScale.textContent = projeto.escala;
+        row.appendChild(tdId);
 
-    row.appendChild(tdScale);
+        let tdName = document.createElement("td");
+        tdName.textContent = projeto.empreendimento;
 
-    let tdWorker = document.createElement("td");
-    tdWorker.textContent = projeto.responsaveis;
+        row.appendChild(tdName);
 
-    row.appendChild(tdWorker);
+        let tdConstrutora = document.createElement("td");
+        tdConstrutora.textContent = projeto.construtora;
 
-    let tdStatus = document.createElement("td");
+        row.appendChild(tdConstrutora);
 
-    let badge = document.createElement("span");
+        let tdScale = document.createElement("td");
 
-    badge.textContent = projeto.status;
-    
-    badge.classList.add("badge");
-    badge.dataset.id = projeto.id
+        tdScale.textContent = projeto.escala;
 
-    const statusClasse = projeto.status
-    .toLowerCase()
-    .replace(" ", "-");
+        row.appendChild(tdScale);
 
-    badge.classList.add(`status-${statusClasse}`);
+        let tdWorker = document.createElement("td");
+        tdWorker.textContent = projeto.responsaveis;
 
-    badge.style.cursor = "pointer";
+        row.appendChild(tdWorker);
 
-    badge.addEventListener("click", () => {
+        let tdStatus = document.createElement("td");
 
-        avancarStatus(projeto, badge);
+        let badge = document.createElement("span");
+
+        badge.textContent = projeto.status;
+        
+        badge.classList.add("badge");
+        badge.dataset.id = projeto.id;
+
+        const statusClasse = projeto.status
+        .toLowerCase()
+        .replace(" ", "-");
+
+        badge.classList.add(`status-${statusClasse}`);
+
+        badge.style.cursor = "pointer";
+
+        tdStatus.appendChild(badge);
+        row.appendChild(tdStatus);
+
+        let tdStart = document.createElement("td");
+        tdStart.textContent = projeto.inicio;
+
+        row.appendChild(tdStart);
+
+        let tdEnd = document.createElement("td");
+        tdEnd.textContent = projeto.entrega;
+
+        row.appendChild(tdEnd);
+
+        tabelamaquetes.appendChild(row);
+
+
+        //Listener
+
+
+        badge.addEventListener("click", () => {
+
+            const novoStatus = alterarStatus(projeto);
+            if(!novoStatus){
+
+                alert("não é possível alterar o status");
+                return;
+
+            }
+            projeto.status = novoStatus;
+
+            renderizarStatus(badge, novoStatus);
+
+        });
 
     });
 
-    tdStatus.appendChild(badge);
-    row.appendChild(tdStatus);
-
-    let tdStart = document.createElement("td");
-    tdStart.textContent = projeto.inicio;
-
-    row.appendChild(tdStart);
-
-    let tdEnd = document.createElement("td");
-    tdEnd.textContent = projeto.entrega;
-
-    row.appendChild(tdEnd);
-
-    tabelamaquetes.appendChild(row);
-
-});
-
-
+};
  
 
-function avancarStatus(projeto, badge) {
+function alterarStatus(projeto) {
 
 
      let indiceatual = STATUS.indexOf(projeto.status);
@@ -95,25 +119,33 @@ function avancarStatus(projeto, badge) {
 
     if (indiceatual === -1){
         console.log("deu ruim");
-        return;
-    }
+        return null;
+    };
     if(indiceatual === STATUS.length-1){
         console.log("deu ruim 2");
-        return;
-    }
+        return null;
+    };
 
-    proximoStatus = STATUS[indiceatual + 1];
-    
-    projeto.status = proximoStatus;
+    return STATUS[indiceatual + 1];
 
-    badge.textContent = proximoStatus;
+    };
+
+function renderizarStatus(badge, status) {
+
+    badge.textContent = "";
+
+    console.log(status);
+
+    badge.textContent = status;
 
     badge.className = "badge";
 
-    const statusClasse = proximoStatus
+    const statusClasse = status
     .toLowerCase()
-    .replace(/\s+/g, "-")
+    .replace(/\s+/g, "-");
 
-    badge.classList.add(statusClasse);
+    badge.classList.add(`status-${statusClasse}`);
 
+    console.log("funcionou");
 };
+

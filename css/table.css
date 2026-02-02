@@ -1,0 +1,89 @@
+/* Fonte e reset */
+table, th, td {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+body {
+  background-color: #ffffff; /* fundo branco */
+  color: #000000;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border: 1px solid #cccccc; /* borda geral */
+  table-layout: fixed;        /* colunas fixas para manter alinhamento */
+}
+
+/* Cabeçalho fixo */
+thead {
+  background-color: #0275d8; /* azul royal */
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Células do cabeçalho */
+th {
+  padding: 8px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* Células do corpo */
+td {
+  padding: 6px 8px;          /* compacto, mas confortável */
+  border-bottom: 1px solid #e0e0e0; /* separação sutil */
+  vertical-align: middle;
+}
+
+/* Hover sutil nas linhas */
+tbody tr:hover {
+  background-color: #f2f7fb; /* azul muito claro para contraste suave */
+  cursor: pointer;
+}
+
+/* Badges de status */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  text-align: center;
+  display: inline-block;
+  min-width: 80px;
+  font-weight: bold;
+}
+
+/* Cores específicas por status */
+.status-a-fazer {
+  background-color: #f0ad4e;
+  color: #000000;
+}
+
+.status-em-producao {
+  background-color: #0275d8;
+  color: #ffffff;
+}
+
+.status-finalizada {
+  background-color: #5cb85c;
+  color: #ffffff;
+}
+
+.status-entregue {
+  background-color: #292b2c;
+  color: #ffffff;
+}
+
+/* Compacto e limpo */
+tbody tr td {
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Remover borda da última coluna */
+tbody tr td:last-child {
+  border-right: none;
+}

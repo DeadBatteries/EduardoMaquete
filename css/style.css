@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+}
+
+
+
 .badge {
     padding: 4px 10px;
     border-radius: 12px;
@@ -8,12 +21,12 @@
 }
 
 .status-em-revisão {
-    background-color: #facc15;
+    background-color: #cf3824;
     color: #000;
 }
 
 .status-a-fazer {
-    background-color: #e5e7eb;
+    background-color: #bbff00;
     color: #000;
 }
 
@@ -23,7 +36,7 @@
 }
 
 .status-finalizada {
-    background-color: #22c55e;
+    background-color: #05f011;
     color: #fff;
 }
 

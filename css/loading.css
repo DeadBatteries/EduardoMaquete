@@ -1,0 +1,31 @@
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+  z-index: 9999;
+}
+
+/* Vídeo do loading */
+#loading video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#loading {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#loading.hide {
+  opacity: 0;
+  pointer-events: none;
+}

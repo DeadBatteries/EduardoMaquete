@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Interno - Eduardo Maquete</title>
+    <link rel = "stylesheet" href = "css/loading.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d47a1;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 280px;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #0d47a1;
+        }
+
+        .card {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d47a1;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 20px 40px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id = "loading">
+
+        <video id="introvideo" autoplay muted >
+
+            <source src="media/Vídeo_Gerado_com_Casas.mp4" type="video/mp4">
+
+            Seu navegador não suporta vídeo
+
+        </video>
+
+       
+    </div>
+
+    <header>
+        <h1>Portal Interno - Eduardo Maquete</h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="html.html">Tabela de Projetos</a> <!-- Link para a tabela -->
+            <a href="#">Cadastro</a>
+            <a href="#">Relatórios</a>
+            <a href="#">Configurações</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Cards principais do sistema interno -->
+        <section>
+            <h2>Seções Rápidas</h2>
+            <div class="card">
+                Projetos Ativos
+            </div>
+            <div class="card">
+                Maquetes Finalizadas
+            </div>
+            <div class="card">
+                Equipe
+            </div>
+            <div class="card">
+                Pendências
+            </div>
+        </section>
+
+        <section>
+            <h2>Acesso Rápido</h2>
+            <p>Por enquanto, você pode acessar a tabela de projetos prontos:</p>
+            <a href="html.html" class="btn">Abrir Tabela</a>
+        </section>
+
+        <section>
+            <h2>Informações Gerais</h2>
+            <p>Este portal é um protótipo de sistema interno da Eduardo Maquete em Campinas. Futuramente, poderá integrar:</p>
+            <ul>
+                <li>Cadastro e controle de projetos</li>
+                <li>Relatórios de produtividade</li>
+                <li>Controle de pendências da equipe</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Eduardo Maquete - Campinas. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src = "js/loadingvideo.js"></script>
+
+</body>
+</html>
