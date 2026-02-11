@@ -1,6 +1,10 @@
 const projetos = [
     
+
+
+    
     {
+      
         id: "CK29",
         empreendimento: "Residencial Encantos do Vale",
         construtora: "Construtora Alfa",
@@ -8,7 +12,8 @@ const projetos = [
        // responsaveis: ["João"],
         status: "Em revisão",
         inicio: "2026-01-10",
-        entrega: "2026-02-05"
+        entrega: "2026-02-05",
+        tipo: "maquete"
     },
     {
         id: "PT12",
@@ -18,7 +23,8 @@ const projetos = [
         //responsaveis: ["Murilo"],
         status: "Em revisão",
         inicio: "2026-01-05",
-        entrega: "2026-01-28"
+        entrega: "2026-01-28",
+        tipo: "maquete"
     },
     
     {
@@ -29,7 +35,8 @@ const projetos = [
         responsaveis: ["Lucas"],
         status: "A fazer",
         inicio: "2026-01-20",
-        entrega: "2026-02-15"
+        entrega: "2026-02-15",
+        tipo: "maquete"
     },
      {
         id: "CK88",
@@ -39,7 +46,8 @@ const projetos = [
         responsaveis: ["Cairo", "Vilson"],
         status: "Em produção",
         inicio: "2026-01-05",
-        entrega: "2026-02-25"
+        entrega: "2026-02-25",
+        tipo: "maquete"
     },
     {
         id: "CK89",
@@ -49,7 +57,8 @@ const projetos = [
         responsaveis: ["Vilson"],
         status: "Finalizada",
         inicio: "2025-11-10",
-        entrega: "2025-12-20"
+        entrega: "2025-12-20",
+        tipo: "maquete"
     },
     {
         id: "CK90",
@@ -59,7 +68,8 @@ const projetos = [
         responsaveis: ["Warley"],
         status: "Entregue",
         inicio: "2025-08-01",
-        entrega: "2025-09-30"
+        entrega: "2025-09-30",
+        tipo: "maquete"
     },
     {
         id: "CK91",
@@ -69,7 +79,8 @@ const projetos = [
         responsaveis: ["Murilo", "Gil"],
         status: "A fazer",
         inicio: "2026-02-01",
-        entrega: "2026-03-20"
+        entrega: "2026-03-20",
+        tipo: "maquete"
     },
     {
         id: "CK92",
@@ -79,7 +90,8 @@ const projetos = [
         responsaveis: ["Cairo"],
         status: "Em produção",
         inicio: "2026-01-15",
-        entrega: "2026-03-28"
+        entrega: "2026-03-28",
+        tipo: "maquete"
     },
     {
         id: "CK93",
@@ -89,7 +101,8 @@ const projetos = [
         responsaveis: ["João"],
         status: "Finalizada",
         inicio: "2025-12-05",
-        entrega: "2026-01-20"
+        entrega: "2026-01-20",
+        tipo: "maquete"
     },
     {
         id: "CK94",
@@ -99,7 +112,8 @@ const projetos = [
         responsaveis: ["Gil"],
         status: "Entregue",
         inicio: "2025-09-10",
-        entrega: "2025-10-30"
+        entrega: "2025-10-30",
+        tipo: "maquete"
     },
     {
         id: "CK95",
@@ -109,7 +123,8 @@ const projetos = [
         responsaveis: ["Chen"],
         status: "A fazer",
         inicio: "2026-02-20",
-        entrega: "2026-04-05"
+        entrega: "2026-04-05",
+        tipo: "maquete"
     },
     {
         id: "CK96",
@@ -119,6 +134,48 @@ const projetos = [
         responsaveis: ["Murilo", "Gil", "Chen"],
         status: "Em produção",
         inicio: "2026-02-01",
-        entrega: "2026-03-20"
+        entrega: "2026-03-20",
+        tipo: "maquete"
     }
+
+
+
 ];
+
+
+ duvidassimuladas = [
+
+        
+    {
+        id: "KK89",
+        autor: "Murilo",
+        texto: "Quando é a entrega?",
+        respondida: false
+    },
+    {
+
+        id: "GL18",
+        autor: "João",
+        texto: "Qual a localização do estande?",
+       respondida: false
+    },
+    {
+
+        id: "HE54",
+        autor: "Gil",
+        texto: "O adesivo ... ja saiu?",
+       respondida: false
+    },
+    {
+
+        id: "HS56",
+        autor: "Warley",
+        texto: "Postes não estão repreesentados no projeto",
+        respondida: false
+    }
+
+ ];
+
+
+
+

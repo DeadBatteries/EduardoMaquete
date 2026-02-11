@@ -1,0 +1,132 @@
+.containerduvidas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  z-index: 9999;
+}
+
+/* estado aberto */
+.containerduvidas.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   PAINEL CENTRAL
+================================ */
+.containerduvidas .painel {
+  background: #ffffff;
+  width: 90vw;
+  max-width: 1200px;
+  height: 80vh;
+
+  border-radius: 16px;
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+/* animação ao abrir */
+.containerduvidas.aberto .painel {
+  transform: scale(1);
+}
+
+/* ===============================
+   COLUNAS
+================================ */
+.coluna {
+  background: #f3f3f3;
+  border-radius: 12px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  overflow-y: auto;
+}
+
+/* variações */
+.coluna.form {
+  background: #f8f8f8;
+}
+
+.coluna.resolvidas {
+  background: #e6fff1;
+}
+
+/* ===============================
+   FORMULÁRIO
+================================ */
+.coluna.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.coluna.form input,
+.coluna.form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.coluna.form input:focus,
+.coluna.form textarea:focus {
+  border-color: #000;
+}
+
+/* botão */
+#enviar {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+#enviar:hover {
+  opacity: 0.85;
+}
+
+/* ===============================
+   RESPONSIVO (MOBILE)
+================================ */
+@media (max-width: 900px) {
+  .containerduvidas .painel {
+    grid-template-columns: 1fr;
+    height: 90vh;
+  }
+}
