@@ -13,7 +13,8 @@ const projetos = [
         status: "Em revisão",
         inicio: "2026-01-10",
         entrega: "2026-02-05",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "PT12",
@@ -24,7 +25,8 @@ const projetos = [
         status: "Em revisão",
         inicio: "2026-01-05",
         entrega: "2026-01-28",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     
     {
@@ -36,7 +38,8 @@ const projetos = [
         status: "A fazer",
         inicio: "2026-01-20",
         entrega: "2026-02-15",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
      {
         id: "CK88",
@@ -47,7 +50,8 @@ const projetos = [
         status: "Em produção",
         inicio: "2026-01-05",
         entrega: "2026-02-25",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK89",
@@ -58,7 +62,8 @@ const projetos = [
         status: "Finalizada",
         inicio: "2025-11-10",
         entrega: "2025-12-20",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK90",
@@ -69,7 +74,8 @@ const projetos = [
         status: "Entregue",
         inicio: "2025-08-01",
         entrega: "2025-09-30",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK91",
@@ -80,7 +86,8 @@ const projetos = [
         status: "A fazer",
         inicio: "2026-02-01",
         entrega: "2026-03-20",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK92",
@@ -91,7 +98,8 @@ const projetos = [
         status: "Em produção",
         inicio: "2026-01-15",
         entrega: "2026-03-28",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK93",
@@ -102,7 +110,8 @@ const projetos = [
         status: "Finalizada",
         inicio: "2025-12-05",
         entrega: "2026-01-20",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK94",
@@ -113,7 +122,8 @@ const projetos = [
         status: "Entregue",
         inicio: "2025-09-10",
         entrega: "2025-10-30",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK95",
@@ -124,7 +134,8 @@ const projetos = [
         status: "A fazer",
         inicio: "2026-02-20",
         entrega: "2026-04-05",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     },
     {
         id: "CK96",
@@ -135,47 +146,12 @@ const projetos = [
         status: "Em produção",
         inicio: "2026-02-01",
         entrega: "2026-03-20",
-        tipo: "maquete"
+        tipo: "maquete",
+        duvidas: []
     }
 
 
 
 ];
-
-
- duvidassimuladas = [
-
-        
-    {
-        id: "KK89",
-        autor: "Murilo",
-        texto: "Quando é a entrega?",
-        respondida: false
-    },
-    {
-
-        id: "GL18",
-        autor: "João",
-        texto: "Qual a localização do estande?",
-       respondida: false
-    },
-    {
-
-        id: "HE54",
-        autor: "Gil",
-        texto: "O adesivo ... ja saiu?",
-       respondida: false
-    },
-    {
-
-        id: "HS56",
-        autor: "Warley",
-        texto: "Postes não estão repreesentados no projeto",
-        respondida: false
-    }
-
- ];
-
-
 
 

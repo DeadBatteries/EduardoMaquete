@@ -28,9 +28,9 @@ function renderizarTabela() {
 
 
 
-     let testemenuduvidas = document.getElementById("divduvidas");
+    let testemenuduvidas = document.getElementById("divduvidas");
 
-    let menuDuvidas = renderDuvida();
+    let menuDuvidas = renderMenuDuvida();
     
     testemenuduvidas.appendChild(menuDuvidas);
 
@@ -233,7 +233,7 @@ function Duvida() {
 
 };
 
-function renderDuvida(){
+function renderMenuDuvida(){
    
   
 
@@ -308,18 +308,25 @@ function renderDuvida(){
     enviar.addEventListener("click", () => {
 
     let duvida = textoinput.value;
+
+    console.log(duvida);
+
     let autor = autorinput.value;
+
+    console.log(autor);
 
     let tipoAtual = "tipo_duvida";
 
-    let duvidacriada = criarDuvida(duvida, autor , tipoAtual);
+    let duvidacriada = criarDuvida(autor, duvida , tipoAtual);
 
     if(duvidacriada === null){
-        alert("");
+        alert("Os dados não foram inseridos corretamente");
     }
 
     textoinput.value = "";
     autorinput.value = "";
+
+    renderDuvida(projetoativo);
 
     })
 
@@ -336,11 +343,7 @@ function renderDuvida(){
     
 };
 
-function ativarprojeto (projeto) {
 
-    let projetoativo = projeto;
-
-}
 
 function criarDuvida (autor,texto, tipoatual) {
 
@@ -371,9 +374,107 @@ function criarDuvida (autor,texto, tipoatual) {
     
 
 
-    let duvida = {id:gerarId(tipoatual), autor:autor, texto:texto, respondida:false};
+    let duvida = {id:gerarId(tipoatual), autor:autor, texto:texto, respondida:false, respostas: []};
+
+    console.log(duvida);
 
     projetoativo.duvidas.push(duvida);
+
+    console.log(projetoativo.duvidas);
+};
+
+
+
+
+
+function renderDuvida(projetoAtivo) {
+
+    let colunaAbertas = document.querySelector(".abertas");
+    let colunaResolvidas = document.querySelector(".resolvidas");
+
+    colunaAbertas.textContent = "";
+    colunaResolvidas.textContent = "";
+
+    projetoAtivo.duvidas.forEach(duvida => {
+
+    
+    if(duvida.respondida === false){
+
+        let card = document.createElement("div")
+        card.classList.add("card-duvida");
+        card.dataset.id = duvida.id;
+
+        let titulo = document.createElement("h4");
+        titulo.textContent = duvida.autor;
+
+        let texto = document.createElement("p");
+        texto.textContent = duvida.texto;
+
+        let responder = document.createElement("button");
+        responder.id = "responderduvida";
+        responder.textContent = "Responder";
+
+        let remover = document.createElement("button");
+        remover.id = "remover"
+        remover.textContent = "Remover";
+
+        card.appendChild(titulo);
+        card.appendChild(texto);
+        card.appendChild(responder);
+        card.appendChild(remover);
+
+        colunaAbertas.appendChild(card);
+
+        responder.addEventListener("click", ()=> {
+
+            let resposta = prompt("Digite: ");
+
+            if(!resposta){
+                alert("Digite uma resposta");
+                return;
+            }
+
+            duvida.respostas.push(resposta);
+            duvida.respondida = true;
+
+            renderDuvida(projetoAtivo);
+
+        });
+
+        remover.addEventListener("click", () => {
+
+            projetoAtivo.duvidas = projetoativo.duvidas.filter(d => d.id !== duvida.id);
+
+            renderDuvida(projetoAtivo);
+
+
+
+        });
+
+
+    }else if(duvida.respondida === true){
+
+        let card = document.createElement("div")
+        card.classList.add("card-duvida");
+        card.dataset.id = duvida.id;
+
+        let titulo = document.createElement("h4");
+        titulo.textContent = duvida.autor;
+
+        let texto = document.createElement("p");
+        texto.textContent = duvida.texto;
+
+        card.appendChild(titulo);
+        card.appendChild(texto);
+
+        colunaResolvidas.appendChild(card);
+
+
+    }
+
+
+    });
+
 
 };
 
