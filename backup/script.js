@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", ()=> {
 
+
 // A ordem da exeucação importa, sempre carregar/salvar antes de renderizar
 
  carregarProjetos();
@@ -15,9 +16,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
  renderizarTabela();
 
 });
-
-
-
 
 const tabelamaquetes = document.getElementById("tabelaMaquetes");
 
@@ -162,12 +160,9 @@ function renderizarTabela() {
         //Listener
 
 
-        badge.addEventListener("click", (e) => {
+        badge.addEventListener("click", () => {
 
-             const novoStatus = e.shiftKey 
-                ? retrocederStatus(projeto) 
-                : alterarStatus(projeto);
-
+            const novoStatus = alterarStatus(projeto);
             if(!novoStatus){
 
                 alert("não é possível alterar o status");
@@ -194,9 +189,8 @@ function renderizarTabela() {
 
     });
 
-    console.log("renderizartabela rodou");
-    aplicarCharmezinho();
-
+console.log("renderizartabela rodou");
+  
 };
  
 
@@ -208,18 +202,7 @@ function renderizarTabela() {
 
 //Funções
 
-function retrocederStatus(projeto){
 
-
-
-    const STATUS = ["Em revisão", "A fazer", "Em produção", "Finalizada", "Entregue"];
-
-    const indice = STATUS.indexOf(projeto.status);
-
-    if(indice <= 0) return null; // já está no primeiro
-
-    return STATUS[indice - 1];
-}
 
 function alterarStatus(projeto) {
 
@@ -410,7 +393,7 @@ function renderMenuDuvida(){
 
 function criarDuvida (autor,texto, tipoatual) {
 
-    const projetoAtual = projetos.find(p => p.id === projetoAtivoID);
+    const projetoAtual = projetos.find(p => p.id === projetoAtivoId);
 
     if(autor === ""){
         return null;
@@ -507,17 +490,17 @@ function renderDuvida() {
             let autorResposta = prompt("Autor: ");
             let resposta = prompt("Digite: ");
 
-            if(!autorResposta|!resposta){
-                alert("Digite ambos os campos");
+            if(!autorResposta){
+                alert("Digite o autor");
                 return;
             }
 
+            if(!resposta){
+                alert("Digite uma resposta");
+                return;
+            }
 
-            let respostapronta = {
-                id: "RESP-" + Date.now(),
-                autor: autorResposta,
-                 texto: resposta
-            };
+            let respostapronta = {id: "RESP-"+Date.now(),autor: autorResposta, texto: resposta};
 
             const novoEstado = projetos.map(p => {
 
@@ -653,39 +636,46 @@ function renderDuvida() {
             let autorResposta = prompt("Autor: ");
             let resposta = prompt("Digite: ");
 
-            if(!autorResposta|!resposta){
-                alert("Digite ambos os campos");
+            if(!autorResposta){
+                alert("Digite o autor");
                 return;
             }
 
 
-            let respostapronta = {
-                id: "RESP-" + Date.now(),
-                autor: autorResposta,
-                 texto: resposta
+            if(!resposta){
+                alert("Digite uma resposta");
+                return;
             };
 
-            const novoEstado = projetos.map(p => {
+             let novoEstado = projetos.map(p => {
 
-            if(p.id !== projetoAtivoID) return p;
+                if (p.id === projetoAtivoID) {
 
-             return {
-                ...p,
-                 duvidas: p.duvidas.map(d =>
-                 d.id === duvida.id
-                 ? {
-                    ...d,
-                    respondida: true,
-                    respostas: [...d.respostas, respostapronta]
-                  }
-                : d
-                )
-             };
-            });
+                    return {    
 
+                    ...p,
+                     duvidas: p.duvidas.map(d => {
+
+                        if (d.id === duvida.id) {
+                        return {
+                            ...d,
+                            respostas: [...d.respostas, { autor: autorResposta, texto: resposta }]
+
+                             }
+
+                        }
+
+                return d;
+
+                })
+
+                    }
+                }
+                return p;
+
+             });
+                
             setProjetos(novoEstado);
-
-       
 
         });
 

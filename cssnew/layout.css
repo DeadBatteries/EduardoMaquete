@@ -1,0 +1,79 @@
+/* TABELA PRINCIPAL */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+thead {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f3f4f6;
+}
+
+/* PAINEL LATERAL */
+.containerduvidas {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -20px 0 40px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 1000;
+}
+
+.containerduvidas .btn.fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #111;
+    color: #ff0000;
+}
+
+.containerduvidas h2,
+.containerduvidas h3 {
+    color: #111;
+}
+
+.containerduvidas form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.containerduvidas.aberto {
+    right: 0;
+}
+
+.painel {
+    display: flex;
+    height: 100%;
+    gap: 24px;
+    padding: 24px;
+}
+
+.coluna {
+    flex: 1;
+    background: #f9fafb;
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}

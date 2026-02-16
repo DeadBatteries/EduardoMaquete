@@ -1,0 +1,33 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE GLOBAL */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+/* Títulos */
+h4, h5 {
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+}

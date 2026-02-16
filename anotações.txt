@@ -1,0 +1,21 @@
+criar funções controladas para cada alteração de estado
+
+usar setEstado para definir o novo estado do projeto
+
+Definir funções como:
+
+    -atualizarStatus(id, novoStatus);
+    -adicionarDuvida(id, texto);
+    -removerProjetos(id);
+
+    *são apenas exemplos*
+
+isso cria ponto unico de alteração;
+fluxo prevísivel
+baixo acoplamento
+arquitetura escalável
+
+assim adicionamos uma camada de abstração que transforma
+alteração sem controle por funções, em algo
+assim: função pede alteração -> setProjetos controla ->
+salva -> renderiza;

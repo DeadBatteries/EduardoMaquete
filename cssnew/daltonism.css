@@ -1,0 +1,52 @@
+/* VARIÁVEIS DE COR PADRÃO */
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #000000;
+  --cor-status-em-revisao: #f0ad4e;
+  --cor-status-a-fazer: #5bc0de;
+  --cor-status-em-producao: #0275d8;
+  --cor-status-finalizada: #5cb85c;
+  --cor-status-entregue: #292b2c;
+}
+
+/* MODO DALTONISMO */
+body.daltonismo {
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #333333;
+  --cor-status-em-revisao: #ffcc00;
+  --cor-status-a-fazer: #0099cc;
+  --cor-status-em-producao: #3366cc;
+  --cor-status-finalizada: #33cc33;
+  --cor-status-entregue: #666666;
+}
+
+/* Forçando fundo e texto de tudo que importa */
+body.daltonismo, 
+body.daltonismo #app, 
+body.daltonismo .tabela, 
+body.daltonismo table, 
+body.daltonismo #tabelaMaquetes,
+body.daltonismo .card-duvida,
+body.daltonismo .containerduvidas {
+  background-color: var(--cor-fundo) !important;
+  color: var(--cor-texto) !important;
+  transition: all 0.3s;
+}
+
+/* Badges existentes no seu JS */
+body.daltonismo .badge,
+body.daltonismo .status-em-revisao,
+body.daltonismo .status-a-fazer,
+body.daltonismo .status-em-producao,
+body.daltonismo .status-finalizada,
+body.daltonismo .status-entregue {
+  background-color: unset !important;
+  color: #fff !important;
+}
+
+/* Badges de status agora usando variáveis */
+body.daltonismo .status-em-revisao { background-color: var(--cor-status-em-revisao) !important; }
+body.daltonismo .status-a-fazer { background-color: var(--cor-status-a-fazer) !important; }
+body.daltonismo .status-em-producao { background-color: var(--cor-status-em-producao) !important; }
+body.daltonismo .status-finalizada { background-color: var(--cor-status-finalizada) !important; }
+body.daltonismo .status-entregue { background-color: var(--cor-status-entregue) !important; }
