@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cálculo de Cotas</title>
+    <link rel= "stylesheet" href = "cssnew/calculadoradeescala.css">
 
 </head>
 
@@ -13,10 +14,6 @@
     <h1>Calculadora de Cotas</h1>
 
      <div class = "formCotas">
-
-        <label for = "valordometro"> Valor do Metro: </label>
-
-        <input type = "number" id = "valordometro"> <br>
 
         <label for = "cotaBase">Digite A Cota Base: </label>
 
@@ -27,24 +24,47 @@
 
         <button id = "calcularbutton"> Calcular</button>
 
-     </div>
-
-     <div class = containerCotas>
-
-     </div>
-
-    <div id = "cotasguia">
+       <div id = "cotasguia">
         
-        <label for = "escalas">Escala: </label>
-        <input type = "radio" value = "25" name = "escalas" id="escala1">1/40
-        <input type = "radio" value = "16,6667" name = "escalas" id="escala2">1/60
-        <input type = "radio" value = "10" name = "escalas" id="escala3">1/100
-        <input type = "radio" value = "6,6667" name = "escalas" id="escala4">1/150
-        <input type = "radio" value = "5" = name = "escalas" id="escala5">1/200
-        <input type = "radio" value = "3,3333" = "escalas"id="escala6">1/300
-        <input type = "radio" value = "2,5" name = "escalas" id="escala7">1/400
-        <input type = "radio" value = "2" name = "escalas" id ="escala8">1/500
-    <div>
+        <label for = "escalas">Selecione a Escala: </label>
+
+        <input type = "radio" value = "0.2" name = "escalas" id="escala1">1/500
+        <input type = "radio" value = "0.33" name = "escalas" id="escala2">1/300
+        <input type = "radio" value = "0.4" name = "escalas" id="escala3">1/250
+        <input type = "radio" value = "0.5" name = "escalas" id="escala4">1/200
+        <input type = "radio" value = "0.66"  name = "escalas" id="escala5">1/150
+        <input type = "radio" value = "1" name = "escalas"id="escala6">1/100
+        <input type = "radio" value = "1.33" name = "escalas" id="escala7">1/75
+        <input type = "radio" value = "2" name = "escalas" id ="escala8">1/50
+        <input type = "radio" value = "2.33" name = "escalas" id = "escala9">1/43
+        <input type = "radio" value = "3.03" name = "escalas" id = "escala10">1/33
+
+
+        <div id = "valor-do-metro-div" hidden>
+
+        <!--condicional valor do metro-->
+            <label for = "valordometro" > Valor do Metro: </label>
+            <input type = "number" id = "valordometro" placeholder="Digite o Valor Do Metro" > 
+                
+        </div>
+
+        <div id = "button-valor-do-metro">
+
+            <button type="button" id="show-valor-do-metro">Digitar Manualmente: 
+            </button>
+
+        </div>
+       
+
+
+
+       
+
+
+     <div class = "containerCotas">
+
+     </div>
+
 
     <script src = "js/calculadoradeescala.js" defer></script>
 

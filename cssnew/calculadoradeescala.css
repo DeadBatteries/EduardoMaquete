@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    padding: 40px;
+    color: #333;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1f2937;
+}
+
+/* Container principal */
+.formCotas {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* Botões */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+/* Radios */
+#cotasguia {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+/* Resultado das cotas */
+.containerCotas {
+    max-width: 700px;
+}
+
+.div-cotas {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cota-bloco {
+    list-style: none;
+}
+
+.cota-bloco li {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+
+
+#remover-cota-button {
+    background-color: #ef4444;
+}
+
+#remover-cota-button:hover {
+    background-color: #b91c1c;
+}
+
+#resultado-cota {
+    font-size: 18   px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+#diferenca-cota {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
